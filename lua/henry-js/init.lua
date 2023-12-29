@@ -1,5 +1,0 @@
-require("henry-js.remap")
-require("henry-js.packer")
-require("henry-js.dotnet")
-require("henry-js.options")
-print("hello from henry-js")
