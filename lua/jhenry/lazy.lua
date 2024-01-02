@@ -7,5 +7,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    
+    { "nvim-lua/plenary.nvim" },
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    },
+    { 
+        "nvim-treesitter/nvim-treesitter", 
+        build = ":TSUpdate" 
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}
+    },
+    {
+        "folke/noice.nvim",
+ --       event = "VeryLazy",
+        opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    },
+    {
+        "OmniSharp/omnisharp-vim"
+    }
 })
