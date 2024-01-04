@@ -1,5 +1,6 @@
-require("notify").setup({
- --   render = "wrapped-compact",
- --   stages = "fade_in_slide_out",
- --   background_color = "#ffffff",
+ruire("notify").setup({
+    background_colour = "#000000",
+    render = "wrapped-compact",
 })
+
+require("notify")("Testing after/nvim-notify.lua")
