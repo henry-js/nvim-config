@@ -8,5 +8,5 @@ op.shiftwidth = 4
 op.expandtab = true
 op.termguicolors = true
 op.clipboard="unnamedplus"
-
+op.scrolloff = 5
 
