@@ -75,11 +75,21 @@ require("lazy").setup({
     {
         'nvim-lualine/lualine.nvim',
         lazy = false,
-        config = function() require("lualine").setup() end
+        config = function() require("lualine").setup() end,
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
-        "lukas-reineke/indent-blankline.nvim"
+        "HiPhish/rainbow-delimiters.nvim"
     },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+    },
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        --tag = "*",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    }
 --    {
 --        "windwp/nvim-autopairs",
 --        event = "InsertEnter",

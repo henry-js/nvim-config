@@ -4,6 +4,8 @@ lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
+local lspDir = os.getenv("USERPROFILE") .. "/.lsps"
+
 require('lspconfig').lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
@@ -35,7 +37,7 @@ end
 }
 
 require'lspconfig'.omnisharp.setup {
-    cmd = { "dotnet", "C:/Users/jhenry/AppData/Local/Programs/OmniSharp/OmniSharp.dll" },
+    cmd = { "dotnet", lspDir .. "/OmniSharp/OmniSharp.dll" },
 
     enable_editorconfig_support = true,
 
@@ -52,6 +54,10 @@ require'lspconfig'.omnisharp.setup {
 
     on_attach = on_attach,
 }
+
+require'lspconfig'.powershell_es.setup{
+    bundle_path = lspDir ..'/PowerShellEditorServices',
+  }
 
 local cmp = require('cmp')
 local cmp_action = lsp_zero.cmp_action()
